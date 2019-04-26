@@ -41,7 +41,7 @@ public class PanModalPresentationAnimator: NSObject {
     /**
      Haptic feedback generator (during presentation)
      */
-    private var feedbackGenerator: UISelectionFeedbackGenerator?
+//    private var feedbackGenerator: UISelectionFeedbackGenerator?
 
     // MARK: - Initializers
 
@@ -53,8 +53,8 @@ public class PanModalPresentationAnimator: NSObject {
          Prepare haptic feedback, only during the presentation state
          */
         if case .presentation = transitionStyle {
-            feedbackGenerator = UISelectionFeedbackGenerator()
-            feedbackGenerator?.prepare()
+//            feedbackGenerator = UISelectionFeedbackGenerator()
+//            feedbackGenerator?.prepare()
         }
     }
 
@@ -84,7 +84,7 @@ public class PanModalPresentationAnimator: NSObject {
 
         // Haptic feedback
         if presentable?.isHapticFeedbackEnabled == true {
-            feedbackGenerator?.selectionChanged()
+//            feedbackGenerator?.selectionChanged()
         }
 
         PanModalAnimator.animate({
@@ -94,7 +94,7 @@ public class PanModalPresentationAnimator: NSObject {
             fromVC.endAppearanceTransition()
             toVC.endAppearanceTransition()
             transitionContext.completeTransition(didComplete)
-            self?.feedbackGenerator = nil
+//            self?.feedbackGenerator = nil
         }
     }
 
